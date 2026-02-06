@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
     ETAPA 1 · Estrutura base do documento HTML responsável por renderizar toda a landing page.
@@ -53,6 +52,12 @@
                 <li><a href="#como-funciona">Como funciona</a></li>
                 <li><a href="#planos">Consultoria</a></li>
                 <li><a href="#resultados">Resultados</a></li>
+                <li class="palette-selector palette-selector-menu">
+                    <span>Paleta:</span>
+                    <button class="palette-btn" data-palette="default" style="background: linear-gradient(90deg,#ffb6c1,#e85ca8);"></button>
+                    <button class="palette-btn" data-palette="lilas" style="background: linear-gradient(90deg,#d6a4ff,#e85ca8);"></button>
+                    <button class="palette-btn" data-palette="coral" style="background: linear-gradient(90deg,#ff8fa3,#ffb6c1);"></button>
+                </li>
             </ul>
         </nav>
     </header>           
@@ -178,7 +183,7 @@
             <!-- ETAPA 5.1 · Seção de Vídeo Destaque -->
     <section class="video-section" id="video">
         <div class="container">
-            <h2 class="section-title">Mito ou Verdade?</h2>
+            <h2 class="section-title">Demarto e Personal!</h2>
             <div class="video-wrapper">
                 <video controls poster="img/video-thumb.jpg" class="main-video" id="mainVideo">
                     <source src="videos/Mito ou verdade 1.mp4" type="video/mp4">
@@ -189,35 +194,24 @@
                     <button class="video-btn" data-src="videos/Mito ou verdade 2.mp4">Parte 2</button>
                 </div>
                 <div class="video-caption">
-                    <p>Demarto e Personal!</p>
+                    <p>Mito ou verdade?</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- ETAPA 8 · Rodapé institucional -->
     <footer class="footer">
         <img src="img/logo.png" width="50" alt="Thays Marsan" class="footer-logo">
         <p>&copy; 2026 Thays Marsan - Personal Trainer | Todos os direitos reservados</p>
-        <p> Desenvolvido por Luan Gs</p>
+        <p>Desenvolvido por Luan Gs</p>
+
     </footer>
 
-    <!-- ETAPA 9 · Botões de contato flutuantes -->
-    <a href="https://wa.me/556183167875?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20treinos." 
-       target="_blank" 
-       class="whatsapp-float" 
-       title="Fale comigo no WhatsApp"
-       aria-label="WhatsApp">
-        <ion-icon name="logo-whatsapp"></ion-icon>
-    </a>
+    <script src="js/palette.js"></script>
 
-    <a href="https://www.instagram.com/thaysmarsan_/" 
-       target="_blank" 
-       class="instagram-float" 
-       title="Siga no Instagram"
-       aria-label="Instagram">
-        <ion-icon name="logo-instagram"></ion-icon>
-    </a>
+
 
         <!-- ETAPA 10 · Scripts principais (interações e animações) -->
         <script src="js/script-index.js"></script>
