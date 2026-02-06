@@ -1,0 +1,118 @@
+/* ===== ETAPA 6 · CONSULTORIA ===== */
+.skills-section {
+  padding: 100px 2rem;
+  background: #ffffff;
+  color: #181818;
+  box-shadow: 0 -40px 80px rgba(0, 0, 0, 0.15);
+}
+
+.skills-section .section-title { color: #181818; }
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.plan-card {
+  background: radial-gradient(circle at 20% -20%, rgba(249, 38, 107, 0.3), #050308 55%);
+  border: 2px solid rgba(249, 38, 107, 0.35);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 65px rgba(249, 38, 107, 0.25);
+  transition: var(--transition);
+}
+
+.plan-card.featured {
+  border-color: var(--primary-light);
+  background: radial-gradient(circle at top, rgba(255, 79, 138, 0.55), rgba(5, 3, 8, 0.95) 65%);
+  transform: scale(1.02);
+  box-shadow: 0 30px 110px rgba(249, 38, 107, 0.45);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 35px 95px rgba(249, 38, 107, 0.4);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: var(--dark);
+  padding: 8px 25px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--light);
+}
+
+.plan-price {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.plan-price .currency,
+.plan-price .cents {
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.plan-price .amount {
+  font-size: 4rem;
+  color: var(--primary);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.plan-features li {
+  padding: 12px 0;
+  color: var(--gray);
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+.plan-features li:last-child { border-bottom: none; }
+
+.plan-button {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.plan-button:hover {
+  background: var(--light);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.5);
+}
