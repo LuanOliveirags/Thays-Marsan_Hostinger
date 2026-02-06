@@ -208,6 +208,29 @@ function initHeroParallax() {
   cards.forEach(card => observer.observe(card));
 }());
 
+// ETAPA EXTRA · Destaca automaticamente o card de processo centralizado na tela
+(function initProcessCardFocusOnScroll() {
+  const cards = document.querySelectorAll('.process-card');
+  if (!('IntersectionObserver' in window) || cards.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    let maxRatio = 0;
+    let mostVisible = null;
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > maxRatio) {
+        maxRatio = entry.intersectionRatio;
+        mostVisible = entry.target;
+      }
+    });
+    cards.forEach(card => card.classList.remove('active'));
+    if (mostVisible) mostVisible.classList.add('active');
+  }, {
+    threshold: Array.from({length: 11}, (_, i) => i / 10) // 0, 0.1, ..., 1
+  });
+
+  cards.forEach(card => observer.observe(card));
+}());
+
 // Troca dinâmica dos vídeos na seção "Mito ou Verdade?"
 document.addEventListener('DOMContentLoaded', function () {
   const video = document.getElementById('mainVideo');
