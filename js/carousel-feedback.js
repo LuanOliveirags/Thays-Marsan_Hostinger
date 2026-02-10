@@ -17,7 +17,7 @@ const feedbackPrints = [
   'img/screenshot-feedback-1.png',
   'img/screenshot-feedback-2.png',
   'img/screenshot-feedback-3.png',
-  'img/screenshot-feedback-4.png',
+  '../img/screenshot-feedback-4.png',
 ];
 
 document.addEventListener('DOMContentLoaded', initFeedbackGallery);
