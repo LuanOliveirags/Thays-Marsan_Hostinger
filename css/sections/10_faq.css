@@ -3,6 +3,11 @@
   padding: 90px 2rem;
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   position: relative;
+  padding: 50px 0;
+  border-radius: 30px;
+  box-shadow: 0 4px 32px #ff2ee311;
+  border: 3px solid #ff2edc33;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .faq-section * {
