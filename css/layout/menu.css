@@ -82,13 +82,7 @@
 }
 
 
-
-
-
-
-
-
-
+/* ===== MENU MOBILE ===== */
 /* ===== MENU MOBILE ===== */
 @media (max-width: 768px) {
   .nav-menu-mobile {
@@ -232,7 +226,14 @@
     position: relative;
     z-index: 1;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  }.menu-logo {
+    background-image: url('../../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+      width: 200px;
+      max-width: 98vw;
   }
+
   .menu-brand-name {
     font-size: 2rem;
     font-weight: 700;
@@ -240,6 +241,7 @@
     color: #fff;
     margin-bottom: 0.2em;
     text-shadow: 0 2px 12px #000a;
+ 
   }
   .menu-brand-subtitle {
     font-size: 1rem;
