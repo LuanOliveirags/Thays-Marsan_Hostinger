@@ -37,7 +37,7 @@
 .hero-logo-img {
   width: 320px;
   max-width: 98vw;
-  filter: drop-shadow(0 0 18px #D0B9A7);
+  filter: drop-shadow(0 0 18px #d0b9a700);
   opacity: 0.98;
   pointer-events: auto;
 }

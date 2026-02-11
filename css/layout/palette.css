@@ -1,94 +1,79 @@
-/* Paleta de cores */
+/* =============================
+	 PALETA DE CORES PRINCIPAL DO SITE
+	 Organização: por seções e uso
+	 Todas as cores já utilizadas no projeto
+	 ============================= */
+
+/* === Cores Globais === */
 :root {
-	--brown-dark: #714329;
-	--brown-medium: #B08463;
-	--brown-light: #B9937B;
-	--beige: #D0B9A7;
-	--beige-gray: #B5A192;
-
-
-
-
-    
-  --primary: #D0B9A7;
-  --primary-dark: #B08463;
-  --primary-light: #D0B9A7;
-  --dark: #0a0a0a;
-  --darker: #050505;
-  --light: #ffffff;
-  --gray: #B9937B;
-  --gray-dark: #714329;
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
+	--primary: #D0B9A7;         /* Bege principal */
+	--primary-dark: #b9937b;    /* Bege escuro */
+	--secondary: #b36326;       /* Laranja queimado */
+	--light: #fff;              /* Branco */
+	--dark: #000;               /* Preto */
+	--brown-dark: #714329;      /* Marrom escuro */
+	--beige: #D0B9A7;           /* Bege claro */
+	--beige-light: #f5d1b6;    /* Bege rosado claro */
+	--pink-glow: #ffb6d5;      /* Rosa claro para glow */
+	--shadow: #000a;            /* Sombra preta */
+	--shadow-beige: #D0B9A711;  /* Sombra bege translúcida */
+	--border: #D0B9A733;        /* Bege translúcido para bordas */
 }
 
-body {
-	background: var(--beige-gray);
-	color: var(--brown-dark);
-}
-
-header, nav {
-	background: var(--beige);
-	color: var(--brown-dark);
-}
-
-.btn, button, .shop-now {
-	background: var(--brown-dark);
-	color: #fff;
-	border-radius: 20px;
-	padding: 12px 32px;
-	font-weight: bold;
-	border: none;
-	transition: background 0.3s;
-}
-.btn:hover, button:hover, .shop-now:hover {
-	background: var(--brown-medium);
-}
-
-section {
-	background: var(--beige);
-	color: var(--brown-dark);
-	border-radius: 24px;
-	margin-bottom: 24px;
-}
-
-footer {
-	background: var(--brown-light);
-	color: var(--brown-dark);
-}
-
-/* Titles de todas as seções */
-.section-title {
-	color: #da9770;
-	font-size: 1.7rem;
-	font-weight: 500;
-	text-align: center;
-	margin-bottom: 2rem;
-	letter-spacing: 1.5px;
-	text-shadow: 0 2px 12px #D0B9A7, 0 1px 0 #fff;
-	position: relative;
-	z-index: 2;
-}
-
-/* Linha decorativa abaixo do título */
-.section-title::after {
-	content: "";
-	display: block;
-	width: 90px;
-	height: 4px;
-	background: #714329;
-	margin: 16px auto 0 auto;
-	border-radius: 2px;
-}
-
+/* === HERO SECTION === */
 /*
-  Este arquivo serve como central de comandos de paleta para todo o site.
-  Altere as variáveis acima para modificar rapidamente as cores globais.
-  Recomenda-se importar este arquivo em todos os principais arquivos de CSS.
+	Fundo: imagem
+	Sombra logo: var(--primary)
+	Seta: #fff
+*/
 
-  Exemplos de uso:
-    background: var(--beige);
-    color: var(--brown-dark);
-    border-color: var(--brown-medium);
-    box-shadow: 0 2px 12px var(--beige);
+/* === PARA QUEM É === */
+/*
+	Fundo: var(--light)
+	Card: #b9937b73 (bege translúcido)
+	Card texto: #714329
+	Card destaque: var(--beige)
+	Sombra: var(--brown-dark), black
+*/
+
+/* === SOBRE === */
+/*
+	Fundo: #fff
+	Card: #fff
+	Texto: #222, black
+	Sombra: #ffb6d522
+	Strong: var(--primary)
+*/
+
+/* === COMO FUNCIONA === */
+/*
+	Fundo: var(--dark)
+	Card: #00000079 (preto translúcido)
+	Card borda: var(--primary)
+	Card número: linear-gradient(135deg, #D0B9A7ba, #b36326)
+	Sombra: #d0b9a782
+*/
+
+/* === PLANOS === */
+/*
+	Fundo: #fff
+	Card: #000 (padrão), linear-gradient(120deg, #fff 80%, #ffe0ef 100%) (destaque)
+	Card borda: var(--border), #D0B9A7 (destaque)
+	Badge: linear-gradient(90deg, #D0B9A7, #D0B9A7)
+	Sombra: #D0B9A722, #D0B9A733
+*/
+
+/* === FEEDBACKS === */
+/*
+	Fundo: #fff
+	Card: #fff
+	Card sombra: #f5d1b6
+	Arrow hover: #f5d1b6
+	Deck sombra: #f5d1b6
+*/
+
+/* === OUTROS === */
+/*
+	Rosa glow: var(--pink-glow)
+	Sombra global: var(--shadow)
 */
