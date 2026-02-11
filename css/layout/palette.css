@@ -16,8 +16,10 @@
 	--beige-light: #f5d1b6;    /* Bege rosado claro */
 	--pink-glow: #ffb6d5;      /* Rosa claro para glow */
 	--shadow: #000a;            /* Sombra preta */
-	--shadow-beige: #D0B9A711;  /* Sombra bege translúcida */
-	--border: #D0B9A733;        /* Bege translúcido para bordas */
+	--shadow-beige: #d0b9a7f3;  /* Sombra bege translúcida */
+	--border: #D0B9A733;  
+	--laranja: #f06b06;        /* Laranja translúcido para bordas */
+	--menu-interno: #D0B9A7d4;   /* Fundo do menu interno */
 }
 
 /* === HERO SECTION === */

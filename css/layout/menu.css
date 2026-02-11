@@ -34,9 +34,9 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
-  background: #000000a2;
+  background: var(--dark);
   border-radius: 12px;
-  border: 2px solid #D0B9A7;
+  border: 2px solid var(--primary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1002;
@@ -47,7 +47,7 @@
 .menu-toggle .bar {
   width: 2px;
   height: 3px;
-  background: #D0B9A7;
+  background: var(--laranja);
   border-radius: 3px;
   transition: all 0.3s ease;
   position: relative;
@@ -70,9 +70,9 @@
 
 /* Hover */
 .menu-toggle:hover {
-  background: #00ffee00;
-  border-color: #D0B9A7;
-  box-shadow: 0 0 25px #D0B9A7;
+  background: var(--dark);
+  border-color: var(--laranja);
+  box-shadow: 0 0 25px var(--laranja);
   transform: scale(1.05);
 }
 
@@ -86,7 +86,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px 25px 25px;
-  border-bottom: 1px solid #D0B9A7;
+  border-bottom: 1px solid var(--laranja);
   text-align: center;
   position: relative;
   z-index: 1;
@@ -97,7 +97,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
-  max-width: 98vw;
+  max-width: 90vw;
 }
 
 .menu-brand-name {
@@ -106,7 +106,7 @@
   letter-spacing: 1.2px;
   color: #fff;
   margin-bottom: 0.2em;
-  text-shadow: 0 2px 12px #000a;
+  text-shadow: 0 2px 12px var(--primary);
 }
 
 .menu-brand-subtitle {
@@ -136,7 +136,7 @@
   padding: 15px 0;
   transition: all 0.3s ease;
   letter-spacing: 0.8px;
-  border-bottom: 1px solid #0000004d;
+  border-bottom: 1px solid var(--dark);
   position: relative;
 }
 
@@ -148,12 +148,12 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(90deg, var(--laranja), var(--dark));
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-items li a:hover {
-  color: #D0B9A7;
+  color: var(--dark);
   transform: translateX(10px);
   padding-left: 10px;
 }
@@ -206,7 +206,7 @@
   .header {
     background: transparent;
     backdrop-filter: blur(9px);
-    border-bottom: 1px solid #0000007d;
+    border-bottom: 1px solid var(--primary);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
@@ -219,8 +219,8 @@
     width: 100%;
     max-width: 260px;
     height: 64vh;
-    background: #d0b9a7d4;
-    border-left: 2px solid #D0B9A7;
+    background: var(--menu-interno);
+    border-left: 2px solid var(--primadary);
     transform: translateX(100%);
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
@@ -240,7 +240,7 @@
   }
 
   .nav-menu-mobile .menu-items li {
-    border-bottom: 1px solid #ffffff4d;
+    border-bottom: 1px solid var(--dark);
     margin: 0 18px;
   }
 
@@ -249,15 +249,15 @@
   }
 
   .nav-menu-mobile .menu-items li a {
-    color: #000000;
+    color: var(--dark);
     font-size: 0.9rem;
     border-radius: 8px;
   }
 
   .nav-menu-mobile .menu-items li a:hover,
   .nav-menu-mobile .menu-items li a:focus {
-    color: #D0B9A7;
-    background: #00000013;
+    color: var(--laranja);
+    background: var(--border);
   }
 }
 
@@ -278,7 +278,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   gap: 18px;
-  background: #D0B9A7;
+  background: var(--primary);
   border-radius: 10px;
 }
 
@@ -290,17 +290,16 @@
 }
 
 .nav-menu-desktop .menu-items li a {
-  color: #000000;
+  color: var(--dark);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 0.7rem;
-  border-radius: 10px;
   letter-spacing: 0.5px;
 }
 
 .nav-menu-desktop .menu-items li a:hover,
 .nav-menu-desktop .menu-items li a:focus {
-  color: #000000f3;
+  color: var(--light);
   padding-left: 0.9rem;
 }
 
