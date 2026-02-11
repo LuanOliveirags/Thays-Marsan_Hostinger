@@ -127,16 +127,16 @@
 .loader-ring:nth-child(1) {
   border-top-color: var(--primary);
   border-right-color: var(--primary);
-  box-shadow: 0 0 20px rgba(249, 38, 107, 0.5);
+  box-shadow: 0 0 20px #f5d1b688, 0 0 0 0 #fff0;
   animation-duration: 1.2s;
 }
 
 .loader-ring:nth-child(2) {
   width: 120px;
   height: 120px;
-  border-top-color: #ff5a8f;
-  border-left-color: #ff5a8f;
-  box-shadow: 0 0 15px rgba(255, 90, 143, 0.4);
+  border-top-color: #f5d1b6;
+  border-left-color: #f5d1b6;
+  box-shadow: 0 0 15px #ff5a8f66, 0 0 0 0 #fff0;
   animation-duration: 1.5s;
   animation-direction: reverse;
 }
@@ -159,7 +159,7 @@
   color: var(--primary);
   z-index: 10;
   animation: iconPulse 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(249, 38, 107, 0.6));
+  filter: drop-shadow(0 0 15px #f5d1b688);
 }
 
 .loader-icon ion-icon {
@@ -192,14 +192,14 @@
 .preloader-content h2 {
   font-size: 2.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), #ff5a8f, #ffffff);
+  background: linear-gradient(135deg, var(--primary), #f5d1b6, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-top: 200px;
   animation: fadeInUp 1s ease-out, pulse 2s ease-in-out infinite 1s;
   letter-spacing: 1px;
-  text-shadow: 0 0 30px rgba(249, 38, 107, 0.3);
+  text-shadow: 0 0 30px #f5d1b688;
 }
 
 .preloader-content p {

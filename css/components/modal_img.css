@@ -3,8 +3,8 @@
   box-shadow: 0 0 32px #D0B9A7, 0 0 18px #d0b9a796;
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
-  border: 2px solid var(--primary-light);
-  background: #d0b9a798;
+  border: 2px solid #f5d1b6;
+  background: #f5d1b6;
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
   position: relative;
 }
@@ -12,8 +12,8 @@
   box-shadow: 0 0 32px #D0B9A7, 0 0 18px #d0b9a796;
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
-  border: 2px solid var(--primary-light);
-  background: #d0b9a798;
+  border: 2px solid #f5d1b6;
+  background: #f5d1b6;
   color: #fff !important;
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s, color 0.4s;
   position: relative;
@@ -22,8 +22,8 @@
   box-shadow: 0 0 32px #D0B9A7, 0 0 18px #d0b9a796;
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
-  border: 2px solid var(--primary-light);
-  background: #d0b9a798;
+  border: 2px solid #f5d1b6;
+  background: #f5d1b6;
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
 }
 /* ===== MODAL DE IMAGEM EM TELA CHEIA ===== */
@@ -35,7 +35,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #d0b9a798;
+  background: #f5d1b6;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s;
@@ -56,7 +56,7 @@
   top: 30px;
   right: 40px;
   font-size: 3rem;
-  color: var(--brown-dark);
+  color: #714329;
   cursor: pointer;
   font-family: sans-serif;
   z-index: 20001;
@@ -64,7 +64,7 @@
   transition: color 0.2s;
 }
 #fechar-modal-imagem:hover {
-  color: #d0b9a798;
+  color: #f5d1b6;
 }
 /* ===== VARIÁVEIS E RESET ===== */
 
@@ -81,8 +81,8 @@ html {
 
 body {
   font-family: 'Montserrat', 'Raleway', sans-serif;
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: rgb(255, 255, 255);
+  color: #f8b582;
   line-height: 1.6;
   overflow-x: hidden;
 }

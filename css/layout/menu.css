@@ -22,15 +22,6 @@
   
 }
 
-.logo img {
-  transition: var(--transition);
-  border-radius: 5%;
-}
-
-.logo img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px #D0B9A7);
-}
 
 .menu-toggle .bar:nth-child(1) {
   margin-bottom: 5px;

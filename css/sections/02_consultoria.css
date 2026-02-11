@@ -21,13 +21,13 @@
 }
 
 .forwho-card {
-  background: var(--light);
+  background: #b9937b73;
   border-radius: 18px;
   box-shadow: 0 0 18px 0 var(--brown-dark);
   padding: 1.7rem 1.5rem 1.2rem 1.3rem;
   min-width: 250px;
   max-width: 300px;
-  color: var(--brown-dark);
+  color: #714329;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
   text-align: center;
 }
 .forwho-card-title {
-  color: var(--brown-dark);
+  color: black;
   font-size: 1.13rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -48,11 +48,11 @@
 }
 
 .forwho-card:hover {
-  box-shadow: 0 0 32px var(--brown-dark);
+  box-shadow: 0 0 32px black;
   transform: translateY(-6px) scale(1.04);
 }
 .forwho-card.active-highlight {
-  box-shadow: 0 0 32px var(--brown-dark), 0 0 18px var(--brown-dark);
+  box-shadow: 0 0 32px black, 0 0 18px black;
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
   border: 2px solid var(--beige);
@@ -60,11 +60,11 @@
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
 }
 .forwho-bad-modern.active-highlight, .forwho-good-modern.active-highlight {
-  box-shadow: 0 0 32px var(--beige), 0 0 18px var(--beige);
+  box-shadow: 0 0 32px #714329, 0 0 18px #714329;
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
   border: 2px solid var(--beige);
-  background: var(--light);
+  background: black;
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
 }
 .forwho-icon {

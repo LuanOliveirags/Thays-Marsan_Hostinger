@@ -29,7 +29,7 @@
 }
 
 .portfolio-item:hover {
-  box-shadow: 0 0 32px #D0B9A7, 0 0 18px #f9266b99, 0 4px 32px #D0B9A744;
+  box-shadow: 0 0 32px #D0B9A7, 0 0 18px #f5d1b6, 0 4px 32px #D0B9A744;
   border: 2.5px solid #D0B9A7;
 }
 
