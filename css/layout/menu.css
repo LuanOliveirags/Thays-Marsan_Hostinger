@@ -226,7 +226,7 @@
     overflow-y: auto;
     z-index: 1001;
     backdrop-filter: blur(2px);
-    border-radius: 12px 0 0 12px;
+    border-radius: 15px 0 0 15px;
   }
 
   .nav-menu-mobile.open {
@@ -251,7 +251,7 @@
   .nav-menu-mobile .menu-items li a {
     color: var(--dark);
     font-size: 0.9rem;
-    border-radius: 8px;
+    border-radius: 7px;
   }
 
   .nav-menu-mobile .menu-items li a:hover,
@@ -292,7 +292,7 @@
 .nav-menu-desktop .menu-items li a {
   color: var(--dark);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0.5rem 0.7rem;
   letter-spacing: 0.5px;
 }

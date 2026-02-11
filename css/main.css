@@ -3,7 +3,7 @@
 @import url("base/sec_generic.css");
 @import url("layout/header.css");
 @import url("sections/01_hero.css");
-@import url("layout/palette.css");
+@import url("layout/Pallettes/palette_menu.css");
 @import url("layout/menu.css");
 @import url("layout/rodape.css");
 @import url("components/preloader.css");
