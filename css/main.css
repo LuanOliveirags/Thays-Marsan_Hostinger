@@ -20,43 +20,6 @@
 
 /* Titles de todas as seções */
 
-/* Paleta de cores */
-:root {
-	--brown-dark: #714329;
-	--brown-medium: #B08463;
-	--brown-light: #B9937B;
-	--beige: #D0B9A7;
-	--beige-gray: #B5A192;
-}
-
-body {
-	background: white;
-	color: black;
-}
-
-header, nav {
-	background: transparent;
-	color: #D0B9A7;
-}
-
-.btn, button, .shop-now {
-	background: var(--brown-dark);
-	color: #fff;
-	border-radius: 20px;
-	padding: 12px 32px;
-	font-weight: bold;
-	border: none;
-	transition: background 0.3s;
-}
-.btn:hover, button:hover, .shop-now:hover {
-	background: var(--brown-medium);
-}
-
-
-
-footer {
-	background: black;
-	color: var(--beige);
-}
+/* As cores agora são controladas exclusivamente pelo arquivo layout/palette.css */
 
 

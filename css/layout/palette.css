@@ -1,4 +1,3 @@
-
 /* Paleta de cores */
 :root {
 	--brown-dark: #714329;
@@ -60,13 +59,13 @@ footer {
 
 /* Titles de todas as seções */
 .section-title {
-	color: #714329;
+	color: #da9770;
 	font-size: 1.7rem;
 	font-weight: 500;
 	text-align: center;
 	margin-bottom: 2rem;
 	letter-spacing: 1.5px;
-	text-shadow: 0 2px 12px #ffb6d5, 0 1px 0 #fff;
+	text-shadow: 0 2px 12px #D0B9A7, 0 1px 0 #fff;
 	position: relative;
 	z-index: 2;
 }
@@ -81,3 +80,15 @@ footer {
 	margin: 16px auto 0 auto;
 	border-radius: 2px;
 }
+
+/*
+  Este arquivo serve como central de comandos de paleta para todo o site.
+  Altere as variáveis acima para modificar rapidamente as cores globais.
+  Recomenda-se importar este arquivo em todos os principais arquivos de CSS.
+
+  Exemplos de uso:
+    background: var(--beige);
+    color: var(--brown-dark);
+    border-color: var(--brown-medium);
+    box-shadow: 0 2px 12px var(--beige);
+*/

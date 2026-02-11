@@ -32,17 +32,17 @@
   position: absolute;
   border-radius: 50%;
   border: 4px solid transparent;
-  box-shadow: 0 0 32px 6px #ff4f8a44, 0 0 0 0 #fff0;
+  box-shadow: 0 0 32px 6px #D0B9A744, 0 0 0 0 #fff0;
   animation: preloader-spin 2.2s linear infinite;
 }
 #preloader .preloader-circle.pink {
   width: 160px;
   height: 160px;
-  border-top: 4px solid #ff4f8a;
-  border-right: 4px solid #ff4f8a;
-  border-bottom: 4px solid #ff4f8a44;
-  border-left: 4px solid #ff4f8a22;
-  box-shadow: 0 0 32px 6px #ff4f8a88, 0 0 0 0 #fff0;
+  border-top: 4px solid #D0B9A7;
+  border-right: 4px solid #D0B9A7;
+  border-bottom: 4px solid #D0B9A744;
+  border-left: 4px solid #D0B9A722;
+  box-shadow: 0 0 32px 6px #D0B9A788, 0 0 0 0 #fff0;
   animation-delay: 0s;
 }
 #preloader .preloader-circle.white {
@@ -58,11 +58,11 @@
 #preloader .preloader-circle.glow {
   width: 140px;
   height: 140px;
-  border-top: 4px solid #ff4f8a88;
-  border-right: 4px solid #ff4f8a44;
-  border-bottom: 4px solid #ff4f8a22;
+  border-top: 4px solid #D0B9A788;
+  border-right: 4px solid #D0B9A744;
+  border-bottom: 4px solid #D0B9A722;
   border-left: 4px solid #fff0;
-  box-shadow: 0 0 40px 10px #ff4f8a55, 0 0 0 0 #fff0;
+  box-shadow: 0 0 40px 10px #D0B9A755, 0 0 0 0 #fff0;
   animation-delay: 1s;
 }
 
@@ -82,13 +82,13 @@
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #ff4f8a 30%, #fff 80%);
+  background: linear-gradient(90deg, #D0B9A7 30%, #fff 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.2em;
   letter-spacing: 0.04em;
-  text-shadow: 0 0 18px #ff4f8a55, 0 0 40px #fff2;
+  text-shadow: 0 0 18px #D0B9A755, 0 0 40px #fff2;
 }
 
 #preloader .preloader-subtitle {
@@ -98,7 +98,7 @@
   letter-spacing: 0.18em;
   font-weight: 400;
   margin-top: 0.2em;
-  text-shadow: 0 0 8px #ff4f8a33;
+  text-shadow: 0 0 8px #D0B9A733;
 }
 
 @keyframes rotate {
