@@ -1,10 +1,10 @@
 /* ===== PARA QUEM É ESSA CONSULTORIA ===== */
 .forwho-section {
-  background: var(--light);
+  background: var(--neutral-100);
   padding: 50px 0;
   border-radius: 30px;
-  box-shadow: 0 4px 32px var(--beige);
-  border: 3px solid var(--border-subtle);
+  box-shadow: 0 4px 32px var(--neutral-100);
+  border: 3px solid var(--brand-accent);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .forwho-section:hover {
@@ -19,7 +19,7 @@
   justify-content: center;
   margin-bottom: 2.2rem;
 }
-
+  
 .forwho-card {
   background: var(--neutral-100);
   border-radius: 18px;
@@ -40,7 +40,7 @@
 }
 
 .forwho-card-title {
-  color: var(--brand-accent);
+  color: var(--title-bg);
   font-size: 1.13rem;
   font-weight: 700;
   margin-bottom: 0.5rem;

@@ -7,10 +7,9 @@
   padding: 50px 0;
   border-radius: 30px;
   box-shadow: 0 4px 32px var(--border-soft);
-  border: 3px solid var(--border-subtle);
+  border: 3px solid var(--brand-accent);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-
 
 
 .plans-grid {
@@ -66,9 +65,9 @@
 .plan-title-personalizado {
   color: var(--neutral-900);  
   background: var(--neutral-100);
-  border: 2px solid var(--brand-accent);
+  border: 2px solid var(--title-bg);
   border-radius: 12px;
-  padding: 10px 24px;
+  padding: 10px 24px; 
   display: inline-block;
   font-weight: 900;
   font-size: 2rem;
@@ -97,14 +96,14 @@
 
 .plan-price .currency {
   font-size: 1.5rem;
-  color: var(--brand-accent);
+  color: var(--title-bg);
   font-weight: 600;
   margin-top: 10px;
 }
 
 .plan-price .amount {
   font-size: 4.5rem;
-  color: var(--brand-accent);
+  color: var(--title-bg);
   font-weight: 900;
   line-height: 1;
   text-shadow: 0 2px 8px var(--neutral-900), 0 1px 0 var(--neutral-900);
@@ -112,7 +111,7 @@
 
 .plan-price .cents {
   font-size: 2rem;
-  color: var(--brand-accent);
+  color: var(--title-bg);
   font-weight: 600;
   margin-top: 10px;
 }
