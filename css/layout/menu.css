@@ -34,9 +34,9 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
-  background: var(--dark);
+  background: var( --neutral-900);
   border-radius: 12px;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--brand-primary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1002;
@@ -47,7 +47,7 @@
 .menu-toggle .bar {
   width: 2px;
   height: 3px;
-  background: var(--laranja);
+  background: var(--brand-accent);
   border-radius: 3px;
   transition: all 0.3s ease;
   position: relative;
@@ -70,9 +70,9 @@
 
 /* Hover */
 .menu-toggle:hover {
-  background: var(--dark);
-  border-color: var(--laranja);
-  box-shadow: 0 0 25px var(--laranja);
+  background: var( --neutral-900);
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 25px var(--brand-accent);
   transform: scale(1.05);
 }
 
@@ -86,7 +86,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px 25px 25px;
-  border-bottom: 1px solid var(--laranja);
+  border-bottom: 1px solid var(--brand-accent);
   text-align: center;
   position: relative;
   z-index: 1;
@@ -106,7 +106,7 @@
   letter-spacing: 1.2px;
   color: #fff;
   margin-bottom: 0.2em;
-  text-shadow: 0 2px 12px var(--primary);
+  text-shadow: 0 2px 12px var(--brand-primary);
 }
 
 .menu-brand-subtitle {
@@ -136,7 +136,7 @@
   padding: 15px 0;
   transition: all 0.3s ease;
   letter-spacing: 0.8px;
-  border-bottom: 1px solid var(--dark);
+  border-bottom: 1px solid var( --neutral-900);
   position: relative;
 }
 
@@ -148,12 +148,12 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--laranja), var(--dark));
+  background: linear-gradient(90deg, var(--brand-accent), var( --neutral-900));
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-items li a:hover {
-  color: var(--dark);
+  color: var( --neutral-900);
   transform: translateX(10px);
   padding-left: 10px;
 }
@@ -206,8 +206,8 @@
   .header {
     background: transparent;
     backdrop-filter: blur(9px);
-    border-bottom: 1px solid var(--primary);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--brand-primary);
+    box-shadow: 0 2px 10px var(--effect-shadow-dark);
   }
 
   .nav-menu-mobile {
@@ -219,8 +219,8 @@
     width: 100%;
     max-width: 260px;
     height: 64vh;
-    background: var(--menu-interno);
-    border-left: 2px solid var(--primadary);
+    background: var(--surface-menu);
+    border-left: 2px solid var(--brand-primary);
     transform: translateX(100%);
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
@@ -240,7 +240,7 @@
   }
 
   .nav-menu-mobile .menu-items li {
-    border-bottom: 1px solid var(--dark);
+    border-bottom: 1px solid var( --neutral-900);
     margin: 0 18px;
   }
 
@@ -249,15 +249,15 @@
   }
 
   .nav-menu-mobile .menu-items li a {
-    color: var(--dark);
+    color: var( --neutral-900);
     font-size: 0.9rem;
     border-radius: 7px;
   }
 
   .nav-menu-mobile .menu-items li a:hover,
   .nav-menu-mobile .menu-items li a:focus {
-    color: var(--laranja);
-    background: var(--border);
+    color: var(--brand-accent);
+    background: var(--border-subtle);
   }
 }
 
@@ -278,7 +278,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   gap: 18px;
-  background: var(--primary);
+  background: var(--brand-primary);
   border-radius: 10px;
 }
 
@@ -290,7 +290,7 @@
 }
 
 .nav-menu-desktop .menu-items li a {
-  color: var(--dark);
+  color: var( --neutral-900);
   font-size: 0.9rem;
   font-weight: 400;
   padding: 0.5rem 0.7rem;
@@ -299,7 +299,7 @@
 
 .nav-menu-desktop .menu-items li a:hover,
 .nav-menu-desktop .menu-items li a:focus {
-  color: var(--light);
+  color: var(--neutral-100);
   padding-left: 0.9rem;
 }
 

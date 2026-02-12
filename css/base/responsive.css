@@ -169,7 +169,7 @@ iframe {
 ========================================================= */
 
 .nav-menu li a:focus {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--brand-primary);
   outline-offset: 3px;
 }
 

@@ -4,11 +4,11 @@
   padding: 50px 0;
   border-radius: 30px;
   box-shadow: 0 4px 32px var(--beige);
-  border: 3px solid var(--beige);
+  border: 3px solid var(--border-subtle);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .forwho-section:hover {
-  border-color: var(--beige);
+  border-color: var(--neutral-900);
   box-shadow: 0 8px 32px var(--beige);
 }
 
@@ -21,13 +21,13 @@
 }
 
 .forwho-card {
-  background: #b9937b73;
+  background: var(--surface-card);
   border-radius: 18px;
   box-shadow: 0 0 18px 0 var(--brown-dark);
   padding: 1.7rem 1.5rem 1.2rem 1.3rem;
   min-width: 250px;
   max-width: 300px;
-  color: #714329;
+  color: var(--neutral-brown-800);
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -38,8 +38,9 @@
   position: relative;
   text-align: center;
 }
+
 .forwho-card-title {
-  color: black;
+  color: var(--neutral-900);
   font-size: 1.13rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -48,25 +49,29 @@
 }
 
 .forwho-card:hover {
-  box-shadow: 0 0 32px black;
+  box-shadow: 0 0 32px var(--neutral-900);
   transform: translateY(-6px) scale(1.04);
 }
+
 .forwho-card.active-highlight {
-  box-shadow: 0 0 32px black, 0 0 18px black;
+  box-shadow: 0 0 32px var(--neutral-900), 0 0 18px var(--neutral-900);
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
   border: 2px solid var(--beige);
   background: var(--beige);
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
 }
-.forwho-bad-modern.active-highlight, .forwho-good-modern.active-highlight {
-  box-shadow: 0 0 32px #714329, 0 0 18px #714329;
+
+.forwho-bad-modern.active-highlight,
+.forwho-good-modern.active-highlight {
+  box-shadow: 0 0 32px var(--neutral-brown-800), 0 0 18px var(--neutral-brown-800);
   transform: translateY(-6px) scale(1.07);
   z-index: 2;
   border: 2px solid var(--beige);
-  background: black;
+  background: var(--neutral-900);
   transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
 }
+
 .forwho-icon {
   display: none;
 }
@@ -78,7 +83,9 @@
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
-.forwho-bad-modern, .forwho-good-modern {
+
+.forwho-bad-modern,
+.forwho-good-modern {
   background: var(--dark);
   border-radius: 14px;
   box-shadow: 0 0 12px var(--light);
@@ -89,28 +96,28 @@
   font-size: 1.01rem;
   font-family: 'Montserrat', Arial, sans-serif;
 }
-.forwho-bad-title {
-  color: var(--beige);
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
+
+.forwho-bad-title,
 .forwho-good-title {
   color: var(--beige);
   font-size: 1.08rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
 }
-.forwho-bad-modern ul, .forwho-good-modern ul {
+
+.forwho-bad-modern ul,
+.forwho-good-modern ul {
   padding-left: 1.1rem;
   margin: 0;
 }
-.forwho-bad-modern li, .forwho-good-modern li {
+
+.forwho-bad-modern li,
+.forwho-good-modern li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
 
-.section-title{
+.section-title {
   color: var(--brown-dark);
   font-size: 1.7rem;
   font-weight: 500;

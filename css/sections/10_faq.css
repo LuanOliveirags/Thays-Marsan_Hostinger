@@ -5,8 +5,8 @@
   position: relative;
   padding: 50px 0;
   border-radius: 30px;
-  box-shadow: 0 4px 32px #D0B9A7;
-  border: 3px solid #D0B9A7;
+  box-shadow: 0 4px 32px var(--border-subtle);
+  border: 3px solid var(--border-subtle);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
