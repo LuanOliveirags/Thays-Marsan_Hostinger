@@ -1,11 +1,12 @@
 /* ===== PARA QUEM É ESSA CONSULTORIA ===== */
 .forwho-section {
-  background: var(--neutral-100);
+  background: var(--bottom-bg);
   padding: 50px 0;
   border-radius: 30px;
   box-shadow: 0 4px 32px var(--neutral-100);
   border: 3px solid var(--title-bg);
   transition: border-color 0.3s, box-shadow 0.3s;
+  
 }
 .forwho-section:hover {
   border-color: var(--brand-accent);

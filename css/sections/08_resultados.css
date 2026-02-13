@@ -1,6 +1,6 @@
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio-section {
-  background: rgb(0, 0, 0);
+  background: var(--neutral-900);
   padding: 50px 0;
   border-radius: 30px;
   box-shadow: 0 4px 32px var( --border-soft);

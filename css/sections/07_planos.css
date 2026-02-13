@@ -3,7 +3,7 @@
    ============================= */
 
 .skills-section {
-  background: var(--neutral-100);
+  background: var(--bottom-bg);
   padding: 50px 0;
   border-radius: 30px;
   box-shadow: 0 4px 32px var(--border-soft);
