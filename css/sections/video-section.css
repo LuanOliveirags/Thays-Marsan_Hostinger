@@ -1,17 +1,327 @@
 /* =============================
-   SEÇÃO DE VÍDEO DESTAQUE - VISUAL MODERNO
+   SEÇÃO DE VÍDEO
    ============================= */
 
 .video-section {
-  background: var(--neutral-900);
-  border-radius: 32px;
-  box-shadow: 0 8px 32px var(--neutral-100);
-  padding: 70px 0 60px 0;
-  min-height: 60vh;
+  background: linear-gradient(160deg, #141011 0%, #0e0b0d 55%, #1a1215 100%);
+  padding: 90px 0 100px;
   position: relative;
-  overflow-x: hidden;
-    border: 3px solid var(--title-bg);
+  overflow: hidden;
+}
 
+/* Orb de fundo */
+.video-section::before {
+  content: '';
+  position: absolute;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, rgba(176,132,99,0.09) 0%, transparent 65%);
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.video-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================
+   LAYOUT DUAS COLUNAS
+============================ */
+
+.video-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ============================
+   COLUNA DO PLAYER
+============================ */
+
+.video-player-col {
+  position: relative;
+}
+
+/* Frame com cantos decorativos */
+.video-player-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(208,185,167,0.1);
+}
+
+/* Linha de cor no topo */
+.video-player-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--title-bg), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Cantos decorativos externos */
+.video-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: rgba(176,132,99,0.5);
+  border-style: solid;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.video-corner--tl {
+  top: -8px;
+  left: -8px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+
+.video-corner--br {
+  bottom: -8px;
+  right: -8px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.main-video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  background: #0d090b;
+  transition: box-shadow 0.4s;
+}
+
+.main-video:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 4px;
+}
+
+/* ============================
+   COLUNA DE INFO
+============================ */
+
+.video-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Eyebrow */
+.video-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  opacity: 0.65;
+  border: 1px solid rgba(208,185,167,0.22);
+  border-radius: 50px;
+  padding: 5px 14px 5px 10px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.video-eyebrow ion-icon {
+  font-size: 1rem;
+  pointer-events: none;
+  color: var(--brand-accent);
+}
+
+.video-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.video-description {
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+/* ============================
+   PLAYLIST
+============================ */
+
+.video-playlist-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 12px;
+}
+
+.video-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Item de playlist */
+.video-playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(208,185,167,0.1);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-playlist-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  border-radius: 0 2px 2px 0;
+  transition: background 0.3s;
+}
+
+.video-playlist-item.active {
+  background: linear-gradient(145deg, rgba(176,132,99,0.1) 0%, rgba(176,132,99,0.04) 100%);
+  border-color: rgba(176,132,99,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.video-playlist-item.active::before {
+  background: linear-gradient(180deg, var(--title-bg), var(--brand-accent));
+}
+
+.video-playlist-item:hover:not(.active) {
+  background: linear-gradient(145deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.015) 100%);
+  border-color: rgba(208,185,167,0.22);
+  transform: translateX(4px);
+}
+
+/* Minithumb */
+.video-playlist-thumb {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(176,132,99,0.12);
+  border: 1px solid rgba(176,132,99,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.video-playlist-item.active .video-playlist-thumb {
+  background: rgba(176,132,99,0.22);
+}
+
+.video-playlist-thumb ion-icon {
+  font-size: 1.1rem;
+  color: var(--brand-accent);
+  pointer-events: none;
+}
+
+/* Texto */
+.video-playlist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.video-playlist-ep {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--title-bg);
+  opacity: 0.8;
+}
+
+.video-playlist-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s;
+}
+
+.video-playlist-item.active .video-playlist-title {
+  color: #fff;
+}
+
+/* Badge "Assistindo" */
+.video-playlist-badge {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--title-bg);
+  background: rgba(176,132,99,0.14);
+  border: 1px solid rgba(176,132,99,0.28);
+  border-radius: 50px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: none;
+}
+
+.video-playlist-item.active .video-playlist-badge {
+  display: block;
+}
+
+/* ============================
+   RESPONSIVO
+============================ */
+
+@media (max-width: 960px) {
+  .video-layout {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .video-info-col {
+    order: -1;
+  }
+
+  .video-heading { font-size: 1.7rem; }
+  .video-section { padding: 70px 0 80px; }
+}
+
+@media (max-width: 600px) {
+  .video-section { padding: 56px 0 64px; }
+  .video-layout { gap: 32px; }
+  .video-heading { font-size: 1.45rem; }
+  .video-playlist-item { padding: 12px 12px; }
+  .video-playlist-thumb { width: 36px; height: 36px; }
+  .video-playlist-title { font-size: 0.82rem; }
+  .video-corner--tl { top: -6px; left: -6px; }
+  .video-corner--br { bottom: -6px; right: -6px; }
 }
 
 

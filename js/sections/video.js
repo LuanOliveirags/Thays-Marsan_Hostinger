@@ -1,36 +1,26 @@
 export function initVideo() {
-  // Lógica dos vídeos
-
-
-
-// Troca dinâmica dos vídeos na seção "Mito ou Verdade?" com play garantido ao clicar
-// (robusto para mobile e navegadores restritivos)
-document.addEventListener('DOMContentLoaded', function () {
   const video = document.getElementById('mainVideo');
-  const btns = document.querySelectorAll('.video-btn');
-  if (!video || !btns.length) return;
+  const items = document.querySelectorAll('.video-playlist-item');
+  if (!video || !items.length) return;
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (btn.classList.contains('active')) return;
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const src = btn.getAttribute('data-src');
-      // Remove todos os sources antigos
+  items.forEach(item => {
+    item.addEventListener('click', function () {
+      if (item.classList.contains('active')) return;
+
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      const src = item.getAttribute('data-src');
       while (video.firstChild) video.removeChild(video.firstChild);
-      // Cria novo source
       const source = document.createElement('source');
       source.setAttribute('src', src);
       source.setAttribute('type', 'video/mp4');
       video.appendChild(source);
       video.load();
-      // Tenta dar play imediatamente após o load
+
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.then(() => {
-          // Sucesso: vídeo tocando
-        }).catch(() => {
-          // Se o navegador bloquear, aguarda interação do usuário
+        playPromise.catch(() => {
           const tryPlay = () => {
             video.play();
             video.removeEventListener('loadeddata', tryPlay);
@@ -40,5 +30,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
 }

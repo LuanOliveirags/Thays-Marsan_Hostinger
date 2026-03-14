@@ -1,122 +1,267 @@
-/* ===== PORTFOLIO SECTION ===== */
+/* ===== SEÇÃO RESULTADOS ===== */
 .portfolio-section {
-  background: var(--neutral-900);
-  padding: 50px 0;
-  border-radius: 30px;
-  box-shadow: 0 4px 32px var( --border-soft);
-  border: 3px solid var(--title-bg);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: linear-gradient(160deg, #141011 0%, #0e0b0d 55%, #1a1215 100%);
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(176,132,99,0.08) 0%, transparent 65%);
+  bottom: -200px;
+  right: -150px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portfolio-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 
+/* ---- Cabeçalho ---- */
+.results-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.results-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  opacity: 0.65;
+  border: 1px solid rgba(208,185,167,0.22);
+  border-radius: 50px;
+  padding: 5px 16px;
+  margin-bottom: 16px;
+}
+
+.results-title {
+  color: #fff !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-shadow: none !important;
+  margin-bottom: 14px !important;
+}
+
+.results-intro {
+  color: rgba(255,255,255,0.38);
+  font-size: 0.98rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- Grid editorial assimétrico ---- */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 14px;
+  margin-top: 0;
 }
 
+.portfolio-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+.portfolio-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+.portfolio-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+
+/* ---- Item base ---- */
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  border: 2.5px solid var(--brand-accent);
-  border-radius: 22px;
-  background: #18181a;
-  aspect-ratio: 16/10;
-  box-shadow: 0 4px 32px var(--neutral-100), 0 1.5px 8px var(--neutral-900);
+  border-radius: 20px;
+  background: #111;
   cursor: pointer;
-  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+  border: 1px solid rgba(208,185,167,0.1);
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
 }
 
 .portfolio-item:hover {
-  box-shadow: 0 0 32px var(--brand-accent), 0 0 18px var(--brand-accent), 0 4px 32px var(--brand-accent);
-  border: 2.5px solid var(--brand-accent);
+  border-color: rgba(208,185,167,0.35);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(176,132,99,0.1);
+  transform: translateY(-3px);
 }
 
 .portfolio-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1), filter 0.45s ease;
+  filter: brightness(0.92) saturate(0.9);
 }
 
+.portfolio-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(0.65) saturate(1.0);
+}
+
+/* Caption sempre visível */
+.portfolio-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 18px 14px;
+  background: linear-gradient(0deg, rgba(10,5,7,0.75) 0%, transparent 100%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-caption {
+  opacity: 0;
+}
+
+/* ---- Overlay no hover ---- */
 .portfolio-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--effect-shadow-dark);
-  backdrop-filter: blur(8px) saturate(1.2);
-  border-radius: 22px;
-  box-shadow: 0 0 24px var(--effect-shadow-dark);
-  border: 1.5px solid var(--effect-shadow-dark);
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   opacity: 0;
-  transition: var(--transition);
-  text-align: center;
-  padding: 20px;
+  z-index: 3;
+  transition: opacity 0.35s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
 
-.portfolio-item:hover img {
-  transform: scale(1.1);
+.portfolio-zoom-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(208,185,167,0.1);
+  border: 1.5px solid rgba(208,185,167,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transform: scale(0.75);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s;
 }
 
-.portfolio-overlay h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: var(--neutral-100);
-  font-weight: 600;
+.portfolio-item:hover .portfolio-zoom-icon {
+  transform: scale(1);
+  background: rgba(208,185,167,0.2);
 }
 
-.portfolio-overlay p {
-  font-size: 1rem;
-  color: var(--neutral-100);
-  font-weight: 300;
+.portfolio-zoom-icon ion-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  pointer-events: none;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 600px) {
-  .portfolio-section {
-    padding: 60px 0.5rem;
-  }
+.portfolio-overlay-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: transform 0.4s ease 0.07s, opacity 0.35s ease 0.07s;
+}
+
+.portfolio-item:hover .portfolio-overlay-label {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =====================
+   MODAL
+===================== */
+.result-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8,4,6,0.93);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.result-modal-overlay.open {
+  display: flex;
+}
+
+.result-modal-img {
+  max-width: 90vw;
+  max-height: 82vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 56px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,185,167,0.15);
+  object-fit: contain;
+  display: block;
+}
+
+.result-modal-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 44px;
+  height: 44px;
+  background: rgba(208,185,167,0.1);
+  border: 1.5px solid rgba(208,185,167,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.result-modal-close ion-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  pointer-events: none;
+}
+
+.result-modal-close:hover {
+  background: rgba(208,185,167,0.2);
+  border-color: var(--brand-accent);
+  transform: rotate(90deg);
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 768px) {
+  .portfolio-section { padding: 70px 0 80px; }
   .portfolio-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    grid-template-rows: 280px 220px 220px;
   }
-  .portfolio-item {
-    aspect-ratio: 1/1;
-    border-radius: 10px;
-  }
-  .portfolio-overlay {
-    padding: 10px;
-  }
-  .portfolio-overlay h3 {
-    font-size: 1.2rem;
-  }
-  .portfolio-overlay p {
-    font-size: 0.95rem;
-  }
+  .portfolio-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .portfolio-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .portfolio-item:nth-child(3) { grid-column: 1; grid-row: 3; }
 }
 
-@media (max-width: 400px) {
-  .portfolio-section {
-    padding: 40px 0.2rem;
-  }
-  .portfolio-overlay h3 {
-    font-size: 1rem;
-  }
-  .portfolio-overlay p {
-    font-size: 0.85rem;
-  }
+@media (max-width: 500px) {
+  .portfolio-section { padding: 56px 0 64px; }
+  .results-header { margin-bottom: 40px; }
+  .results-title { font-size: 1.55rem !important; }
+  .portfolio-grid { grid-template-rows: 240px 200px 200px; gap: 10px; }
+  .result-modal-close { top: 16px; right: 16px; }
 }
 
 

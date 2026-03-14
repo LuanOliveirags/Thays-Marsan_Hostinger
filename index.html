@@ -351,19 +351,40 @@
     -->
     <section class="portfolio-section" id="resultados" aria-label="Resultados de alunas">
         <div class="container">
-            <h2 class="section-title">Transformações Reais de Alunas</h2>
-            <p class="results-intro">Exemplo de galeria de resultados ou portfólio. Substitua as imagens e textos conforme sua necessidade.</p>
+
+            <div class="results-header">
+                <span class="results-tag">Resultados reais</span>
+                <h2 class="section-title results-title">Transformações Reais de Alunas</h2>
+                <p class="results-intro">Cada imagem representa uma história de dedicação e transformação. Substitua pelas fotos reais das suas alunas.</p>
+            </div>
+
             <div class="portfolio-grid">
-                <!-- Imagens genéricas -->
-                <div class="portfolio-item"><img class="result-img" src="img/Screenshot_1.png" alt="Exemplo 1"><div class="portfolio-overlay"><h3>Exemplo</h3></div></div>
-                <div class="portfolio-item"><img class="result-img" src="img/Screenshot_2.png" alt="Exemplo 2"><div class="portfolio-overlay"><h3>Exemplo</h3></div></div>
-                <div class="portfolio-item"><img class="result-img" src="img/Screenshot_3.png" alt="Exemplo 3"><div class="portfolio-overlay"><h3>Exemplo</h3></div></div>
+                <div class="portfolio-item" tabindex="0" role="button" aria-label="Ver Resultado 1">
+                    <img class="result-img" src="img/Screenshot_1.png" alt="Transformação 1" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-zoom-icon"><ion-icon name="expand-outline"></ion-icon></div>
+                        <span class="portfolio-overlay-label">Ver transformação</span>
+                    </div>
+                    <div class="portfolio-caption">Aluna 01</div>
+                </div>
+                <div class="portfolio-item" tabindex="0" role="button" aria-label="Ver Resultado 2">
+                    <img class="result-img" src="img/Screenshot_2.png" alt="Transformação 2" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-zoom-icon"><ion-icon name="expand-outline"></ion-icon></div>
+                        <span class="portfolio-overlay-label">Ver transformação</span>
+                    </div>
+                    <div class="portfolio-caption">Aluna 02</div>
+                </div>
+                <div class="portfolio-item" tabindex="0" role="button" aria-label="Ver Resultado 3">
+                    <img class="result-img" src="img/Screenshot_3.png" alt="Transformação 3" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-zoom-icon"><ion-icon name="expand-outline"></ion-icon></div>
+                        <span class="portfolio-overlay-label">Ver transformação</span>
+                    </div>
+                    <div class="portfolio-caption">Aluna 03</div>
+                </div>
             </div>
-            <!-- Modal para expandir imagem dos resultados -->
-            <div id="result-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
-                <span id="result-modal-close" style="position:absolute; top:32px; right:48px; font-size:2.5em; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
-                <img id="result-modal-img" src="" alt="Resultado expandido" style="max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 4px 32px rgba(209,59,123,0.18);">
-            </div>
+
         </div>
     </section>
         <br>
@@ -375,47 +396,95 @@
     -->
     <section class="portfolio-feedbacks-section" id="feedbacks" aria-label="Feedbacks de alunas">
         <div class="container">
-            <h2 class="section-title">O que dizem nossos clientes</h2>
-            <p class="results-intro">Espaço para depoimentos, avaliações ou feedbacks genéricos sobre o serviço/produto.</p>
-            <br>
+
+            <div class="feedbacks-header">
+                <span class="feedbacks-tag">Depoimentos</span>
+                <h2 class="section-title feedbacks-title">O que dizem as alunas</h2>
+                <p class="feedbacks-subtitle">Resultados reais de quem confiou no processo e transformou sua vida.</p>
+            </div>
+
             <div class="feedback-orbit" id="feedbackOrbit">
-                <button class="feedback-arrow" id="feedbackPrev" type="button" aria-label="Mostrar feedback anterior">
-                    <span>&larr;</span>
+                <button class="feedback-arrow" id="feedbackPrev" type="button" aria-label="Feedback anterior">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
                 </button>
-                <div class="feedback-deck" id="feedbackDeck" aria-live="polite">
-                    <!-- Cartas preenchidas via JS -->
+
+                <div class="feedback-stage">
+                    <div class="feedback-deck" id="feedbackDeck" aria-live="polite">
+                        <!-- Cartas preenchidas via JS -->
+                    </div>
+                    <div class="feedback-counter" id="feedbackCounter">1 / 5</div>
                 </div>
-                <button class="feedback-arrow" id="feedbackNext" type="button" aria-label="Mostrar próximo feedback">
-                    <span>&rarr;</span>
+
+                <button class="feedback-arrow" id="feedbackNext" type="button" aria-label="Próximo feedback">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
                 </button>
             </div>
-            <!-- Modal para expandir imagem -->
-            <div id="feedback-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
-                <span id="feedback-modal-close" style="position:absolute; top:32px; right:48px; font-size:2.5em; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
-                <img id="feedback-modal-img" src="" alt="Feedback expandido" style="max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 4px 32px rgba(209,59,123,0.18);">
+
+            <!-- Modal feedback -->
+            <div id="feedback-modal" class="feedback-modal-overlay" role="dialog" aria-modal="true">
+                <button id="feedback-modal-close" class="feedback-modal-close" aria-label="Fechar">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <img id="feedback-modal-img" src="" alt="Feedback expandido" class="feedback-modal-img">
             </div>
+
         </div>
     </section>
     <br>
 
 
 <!-- ETAPA 5.1 · Seção de Vídeo Destaque -->
-
     <section class="video-section" id="video">
         <div class="container">
-            <h2 class="section-title">Veja na prática</h2>
-            <div class="video-wrapper">
-                <video controls poster="img/video-thumb.jpg" class="main-video" id="mainVideo">
-                    <source src="videos/Mito ou verdade 1.mp4" type="video/mp4">
-                    Seu navegador não suporta o elemento <code>video</code>.
-                </video>
-                <div class="video-controls">
-                    <button class="video-btn active" data-src="videos/Mito ou verdade 1.mp4">Parte 1</button>
-                    <button class="video-btn" data-src="videos/Mito ou verdade 2.mp4">Parte 2</button>
+
+            <div class="video-layout">
+
+                <!-- Coluna: Player -->
+                <div class="video-player-col">
+                    <div class="video-player-frame">
+                        <video controls poster="img/video-thumb.jpg" class="main-video" id="mainVideo">
+                            <source src="videos/Mito ou verdade 1.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento <code>video</code>.
+                        </video>
+                        <!-- Cantos decorativos -->
+                        <span class="video-corner video-corner--tl"></span>
+                        <span class="video-corner video-corner--br"></span>
+                    </div>
                 </div>
-                <div class="video-caption">
-                    <p>Mito ou verdade?</p>
+
+                <!-- Coluna: Info + Playlist -->
+                <div class="video-info-col">
+                    <span class="video-eyebrow">
+                        <ion-icon name="play-circle-outline"></ion-icon>
+                        Conteúdo exclusivo
+                    </span>
+                    <h2 class="video-heading">Veja na prática</h2>
+                    <p class="video-description">Assista aos vídeos e descubra mitos e verdades sobre treino feminino com a Thays Marsan.</p>
+
+                    <div class="video-playlist">
+                        <p class="video-playlist-label">Selecione o episódio</p>
+                        <button class="video-playlist-item active" data-src="videos/Mito ou verdade 1.mp4">
+                            <div class="video-playlist-thumb">
+                                <ion-icon name="play-outline"></ion-icon>
+                            </div>
+                            <div class="video-playlist-info">
+                                <span class="video-playlist-ep">EP 01</span>
+                                <span class="video-playlist-title">Mito ou Verdade? &mdash; Parte 1</span>
+                            </div>
+                            <div class="video-playlist-badge">Assistindo</div>
+                        </button>
+                        <button class="video-playlist-item" data-src="videos/Mito ou verdade 2.mp4">
+                            <div class="video-playlist-thumb">
+                                <ion-icon name="play-outline"></ion-icon>
+                            </div>
+                            <div class="video-playlist-info">
+                                <span class="video-playlist-ep">EP 02</span>
+                                <span class="video-playlist-title">Mito ou Verdade? &mdash; Parte 2</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -428,24 +497,92 @@
     -->
     <section class="faq-section" id="faq" aria-label="Dúvidas frequentes">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-grid">
-                <!-- Cada card é controlado por JS para abrir/fechar -->
-                <div class="faq-card" data-faq>
-                    <div class="faq-question">
-                        <h3>Pergunta genérica 1?</h3>
+            <div class="faq-layout">
+
+                <!-- Painel lateral esquerdo -->
+                <aside class="faq-aside">
+                    <span class="faq-aside-bg-char">?</span>
+                    <span class="faq-eyebrow">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                        Tire suas dúvidas
+                    </span>
+                    <h2 class="faq-heading">Perguntas<br>Frequentes</h2>
+                    <p class="faq-aside-text">Reunimos as respostas para as dúvidas mais comuns da nossa comunidade. Não encontrou o que procura?</p>
+                    <a href="." target="_blank" rel="noopener noreferrer" class="faq-cta">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        Fale comigo agora
+                    </a>
+                </aside>
+
+                <!-- Accordion -->
+                <div class="faq-accordion">
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">01</span>
+                            <span class="faq-q-text">Preciso ter experiência prévia com treinos para começar?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Não! Atendo desde iniciantes completas até alunas avançadas. Antes de montar o treino, faço uma anamnese detalhada para entender seu histórico, limitações e objetivos — garantindo que o protocolo comece no nível ideal para você.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Resposta genérica para a dúvida mais comum dos visitantes.</p>
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">02</span>
+                            <span class="faq-q-text">Como funciona o acompanhamento à distância?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Após a contratação, você preenche uma ficha completa de anamnese. Com base nisso, monto o treino personalizado na plataforma e mantenho contato direto via WhatsApp para tirar dúvidas, ajustar cargas e acompanhar sua evolução.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-card" data-faq>
-                    <div class="faq-question">
-                        <h3>Pergunta genérica 2?</h3>
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">03</span>
+                            <span class="faq-q-text">Com que frequência meu treino é atualizado?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A periodização é revisada a cada ciclo de 4 a 6 semanas, ou antes se necessário. O objetivo é que o treino sempre acompanhe sua evolução — sem estagnação e sem sobrecarga desnecessária.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Outra resposta genérica para exemplificar o funcionamento do FAQ.</p>
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">04</span>
+                            <span class="faq-q-text">Os treinos funcionam para quem treina em casa?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Tenho protocolos específicos para treino em casa, com ou sem equipamentos. Basta informar na anamnese o que você tem disponível e o protocolo é montado de acordo com a sua realidade.</p>
+                        </div>
                     </div>
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">05</span>
+                            <span class="faq-q-text">Qual é a duração mínima do plano contratado?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Os planos têm duração mínima de 1 mês. Porém, os melhores resultados aparecem com ao menos 3 meses de acompanhamento contínuo — o tempo necessário para o corpo adaptar e a transformação se consolidar.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-faq>
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-q-num">06</span>
+                            <span class="faq-q-text">Como é o suporte durante o plano?</span>
+                            <span class="faq-q-icon"><ion-icon name="add-outline"></ion-icon></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Você terá acesso direto a mim via WhatsApp para tirar dúvidas sobre execução, cargas e rotina. Não deixo nenhuma aluna sem resposta — o suporte faz parte do processo de transformação.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -79,6 +79,12 @@ function initFeedbackGallery() {
     return article;
   };
 
+  const counter = document.getElementById('feedbackCounter');
+
+  const updateCounter = () => {
+    if (counter) counter.textContent = `${currentIndex + 1} / ${total}`;
+  };
+
   const renderDeck = () => {
     // Fade out
     deck.style.opacity = '0';
@@ -91,8 +97,9 @@ function initFeedbackGallery() {
       );
       deck.appendChild(card);
       
-      // Atualizar barra de progresso
+      // Atualizar barra de progresso e contador
       updateProgress();
+      updateCounter();
       
       // Fade in
       setTimeout(() => {
@@ -138,20 +145,13 @@ function initFeedbackGallery() {
   const openFeedbackModal = (src) => {
     if (!modal || !modalImg) return;
     modalImg.src = src;
-    modal.style.display = 'flex';
-    modal.style.opacity = '0';
-    requestAnimationFrame(() => {
-      modal.style.opacity = '1';
-    });
+    modal.classList.add('open');
   };
 
   const closeModal = () => {
     if (!modal) return;
-    modal.style.opacity = '0';
-    setTimeout(() => {
-      modal.style.display = 'none';
-      if (modalImg) modalImg.src = '';
-    }, 250);
+    modal.classList.remove('open');
+    setTimeout(() => { if (modalImg) modalImg.src = ''; }, 300);
   };
 
   if (modal && modalClose) {
@@ -160,7 +160,7 @@ function initFeedbackGallery() {
       if (event.target === modal) closeModal();
     });
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal.style.display === 'flex') {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
         closeModal();
       }
     });
