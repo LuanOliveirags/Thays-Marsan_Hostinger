@@ -23,6 +23,7 @@ export function initApp() {
   initStatsObserver();
   initRevealObserver();
   initScrollHeaderEffect();
+  initTimelineObserver();
 }
 
 // ===== DESTAQUE DINÂMICO DOS CARDS "PARA QUEM É" NO MOBILE =====
@@ -122,6 +123,21 @@ function initRevealObserver() {
     element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     revealObserver.observe(element);
   });
+}
+
+// ===== TIMELINE LINE ANIMATION =====
+function initTimelineObserver() {
+  const section = document.querySelector('.process-section');
+  if (!section) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  observer.observe(section);
 }
 
 // ===== SCROLL HEADER EFFECT =====

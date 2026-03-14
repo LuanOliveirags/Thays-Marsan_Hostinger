@@ -60,17 +60,44 @@
                 <span class="bar"></span>
             </button>
             <div class="nav-menu-mobile" id="navMenuMobile">
+
+                <!-- Orbs decorativos de fundo -->
+                <div class="menu-orb menu-orb-1"></div>
+                <div class="menu-orb menu-orb-2"></div>
+
+                <!-- Botão fechar -->
+                <button class="menu-close-btn" id="menuCloseBtn" aria-label="Fechar menu">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+
+                <!-- Marca -->
                 <div class="menu-brand">
+                    <img src="img/logo.png" alt="Thays Marsan" class="menu-logo-img">
+                    <span class="menu-brand-tagline">Consultoria Feminina</span>
+                </div>
+
+                <!-- Navegação -->
                 <ul class="menu-items">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#para-quem-e">Para quem é</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#como-funciona">Como funciona</a></li>
-                    <li><a href="#planos">Consultoria</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#feedbacks">Feedbacks</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#inicio"><ion-icon name="home-outline"></ion-icon><span>Início</span></a></li>
+                    <li><a href="#para-quem-e"><ion-icon name="people-outline"></ion-icon><span>Para quem é</span></a></li>
+                    <li><a href="#sobre"><ion-icon name="person-circle-outline"></ion-icon><span>Sobre</span></a></li>
+                    <li><a href="#como-funciona"><ion-icon name="list-outline"></ion-icon><span>Como funciona</span></a></li>
+                    <li><a href="#planos"><ion-icon name="star-outline"></ion-icon><span>Consultoria</span></a></li>
+                    <li><a href="#resultados"><ion-icon name="images-outline"></ion-icon><span>Resultados</span></a></li>
+                    <li><a href="#feedbacks"><ion-icon name="chatbubbles-outline"></ion-icon><span>Feedbacks</span></a></li>
+                    <li><a href="#faq"><ion-icon name="help-circle-outline"></ion-icon><span>FAQ</span></a></li>
                 </ul>
+
+                <!-- Redes sociais -->
+                <div class="menu-footer-social">
+                    <a href="/" target="_blank" class="menu-social-link" aria-label="Instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="." target="_blank" class="menu-social-link" aria-label="WhatsApp">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                </div>
+
             </div>
         </nav>
         <div class="menu-overlay" id="menuOverlay"></div>
@@ -109,18 +136,33 @@
     -->
     <section class="forwho-section" id="para-quem-e" aria-label="Para quem é">
         <div class="container">
-             <br>
-            <h2 class="section-title forwho-title">Para quem é este site?</h2>
+            <div class="forwho-header">
+                <span class="forwho-tag">Consultoria Feminina</span>
+                <h2 class="section-title forwho-title">Para quem é esta consultoria?</h2>
+                <p class="forwho-subtitle">Um programa desenhado para mulheres que estão prontas para transformar seus resultados de verdade.</p>
+            </div>
             <div class="forwho-cards">
                 <div class="forwho-card">
+                    <div class="forwho-card-icon">
+                        <ion-icon name="flame-outline"></ion-icon>
+                    </div>
+                    <span class="forwho-card-num">01</span>
                     <h4 class="forwho-card-title">Público 1</h4>
                     <p>Esta seção é destinada a pessoas que buscam informações e soluções personalizadas para suas necessidades.</p>
                 </div>
-                <div class="forwho-card">
+                <div class="forwho-card forwho-card--accent">
+                    <div class="forwho-card-icon">
+                        <ion-icon name="leaf-outline"></ion-icon>
+                    </div>
+                    <span class="forwho-card-num">02</span>
                     <h4 class="forwho-card-title">Público 2</h4>
                     <p>Ideal para quem deseja transformar sua rotina com acompanhamento profissional e dicas exclusivas.</p>
                 </div>
                 <div class="forwho-card">
+                    <div class="forwho-card-icon">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </div>
+                    <span class="forwho-card-num">03</span>
                     <h4 class="forwho-card-title">Público 3</h4>
                     <p>Perfeito para quem valoriza um ambiente de apoio, motivação e desenvolvimento contínuo.</p>
                 </div>
@@ -137,11 +179,50 @@
     -->
     <section class="about-section" id="sobre" aria-label="Sobre mim">
         <div class="container">
-            <h2 class="section-title">Quem é Thays Marsan?</h2>
-            <div class="about-content">
-                <p>Esta seção apresenta informações gerais sobre o serviço ou produto oferecido, destacando seus principais diferenciais e benefícios.</p>
-                <p>Inclua aqui um breve histórico, missão, visão ou valores, conforme o objetivo do seu site.</p>
-                <p>Utilize este espaço para criar conexão com o visitante e transmitir confiança.</p>
+            <div class="about-layout">
+
+                <!-- Coluna: Imagem -->
+                <div class="about-image-col">
+                    <div class="about-img-frame">
+                        <img src="img/sobre.jpg" alt="Thays Marsan - Personal Trainer" class="about-photo">
+                        <div class="about-img-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Personal Trainer</span>
+                        </div>
+                    </div>
+                    <!-- Bolha de experiência -->
+                    <div class="about-exp-blob">
+                        <span class="about-exp-num">+5</span>
+                        <span class="about-exp-label">anos de<br>experiência</span>
+                    </div>
+                </div>
+
+                <!-- Coluna: Texto -->
+                <div class="about-text-col">
+                    <span class="about-tag">Conheça a profissional</span>
+                    <h2 class="section-title about-title">Quem é Thays Marsan?</h2>
+
+                    <p class="about-bio">Esta seção apresenta informações gerais sobre o serviço ou produto oferecido, destacando seus principais diferenciais e benefícios.</p>
+                    <p class="about-bio">Inclua aqui um breve histórico, missão, visão ou valores, conforme o objetivo do seu site.</p>
+                    <p class="about-bio">Utilize este espaço para criar conexão com o visitante e transmitir confiança.</p>
+
+                    <!-- Stats -->
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="about-stat-num">+500</span>
+                            <span class="about-stat-label">Alunas atendidas</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-num">+5</span>
+                            <span class="about-stat-label">Anos de experiência</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-num">100%</span>
+                            <span class="about-stat-label">Consultoria online</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -153,24 +234,57 @@
     -->
     <section class="process-section" id="como-funciona" aria-label="Como funciona">
         <div class="container">
-              <h2 class="section-title">Como funciona minha consultoria</h2>
-            <p class="process-intro">Veja abaixo um exemplo de etapas do processo de atendimento ou funcionamento do serviço:</p>
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">1</div>
-                    <h3>Primeiro passo</h3>
-                    <p>Descrição genérica do primeiro passo do processo, como contato inicial ou análise de perfil.</p>
+
+            <div class="process-header">
+                <span class="process-tag">Passo a passo</span>
+                <h2 class="section-title process-title">Como funciona minha consultoria</h2>
+                <p class="process-intro">Do primeiro contato à transformação — um processo simples, guiado e totalmente online.</p>
+            </div>
+
+            <div class="process-timeline">
+
+                <!-- Linha conectora -->
+                <div class="process-line"><div class="process-line-fill"></div></div>
+
+                <!-- Etapa 1 -->
+                <div class="process-step">
+                    <div class="process-node">
+                        <div class="process-node-ring"></div>
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    </div>
+                    <div class="process-card">
+                        <span class="process-card-num">01</span>
+                        <h3>Primeiro passo</h3>
+                        <p>Descrição genérica do primeiro passo do processo, como contato inicial ou análise de perfil.</p>
+                    </div>
                 </div>
-                <div class="process-card">
-                    <div class="process-number">2</div>
-                    <h3>Segundo passo</h3>
-                    <p>Explicação genérica sobre a entrega de materiais, planos ou orientações ao cliente.</p>
+
+                <!-- Etapa 2 -->
+                <div class="process-step">
+                    <div class="process-node">
+                        <div class="process-node-ring"></div>
+                        <ion-icon name="clipboard-outline"></ion-icon>
+                    </div>
+                    <div class="process-card">
+                        <span class="process-card-num">02</span>
+                        <h3>Segundo passo</h3>
+                        <p>Explicação genérica sobre a entrega de materiais, planos ou orientações ao cliente.</p>
+                    </div>
                 </div>
-                <div class="process-card">
-                    <div class="process-number">3</div>
-                    <h3>Terceiro passo</h3>
-                    <p>Informações genéricas sobre o acompanhamento, suporte ou revisões periódicas.</p>
+
+                <!-- Etapa 3 -->
+                <div class="process-step">
+                    <div class="process-node">
+                        <div class="process-node-ring"></div>
+                        <ion-icon name="trending-up-outline"></ion-icon>
+                    </div>
+                    <div class="process-card">
+                        <span class="process-card-num">03</span>
+                        <h3>Terceiro passo</h3>
+                        <p>Informações genéricas sobre o acompanhamento, suporte ou revisões periódicas.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -192,6 +306,8 @@
                         <span class="amount">999</span>
                         <span class="cents">,99</span>
                     </div>
+                    <span class="plan-price-period">/ mês</span>
+                    <hr class="plan-divider">
                     <ul class="plan-features">
                             <li>Item genérico incluso no plano.</li>
                             <li>Outro benefício ou diferencial do serviço.</li>
@@ -212,6 +328,8 @@
                         <span class="amount">999</span>
                         <span class="cents">,99</span>
                     </div>
+                    <span class="plan-price-period">/ mês</span>
+                    <hr class="plan-divider">
                     <ul class="plan-features">
                             <li>Item genérico incluso no plano.</li>
                             <li>Outro benefício ou diferencial do serviço.</li>

@@ -1,46 +1,311 @@
-/* ===== ABOUT SECTION ===== */
+/* ===== SOBRE MIM ===== */
+
 .about-section {
   background: var(--bottom-bg);
-  padding: 50px 0;
-  border-radius: 30px;
-  box-shadow: 0 4px 32px var(--effect-shadow-soft);
-  border: 3px solid var(--title-bg);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 90px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
-.about-section .about-content {
-  margin: 0 auto;
-  font-size: 1.15rem;
-  color: var(--neutral-100);
-  line-height: 1.7;
-  background: var(--surface-white);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px var(--effect-shadow-glow);
-  padding: 24px;
-      background: var(--bottom-bg);
+/* Linha decorativa vertical de fundo */
+.about-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(176,132,99,0.12), transparent);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.about-section .about-content p {
+.about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Layout duas colunas ---- */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* =====================
+   COLUNA DA IMAGEM
+===================== */
+.about-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Moldura da foto */
+.about-img-frame {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+/* Borda decorativa offset */
+.about-img-frame::before {
+  content: '';
+  position: absolute;
+  inset: -14px -14px -14px -14px;
+  border: 2px solid rgba(176, 132, 99, 0.3);
+  border-radius: 28px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Borda offset mais externa */
+.about-img-frame::after {
+  content: '';
+  position: absolute;
+  inset: -28px -28px -28px -28px;
+  border: 1px solid rgba(176, 132, 99, 0.1);
+  border-radius: 36px;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 380px;
+  height: 460px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 22px;
+  display: block;
+  filter: grayscale(10%) brightness(0.97);
+  transition: filter 0.4s ease;
+}
+
+.about-img-frame:hover .about-photo {
+  filter: grayscale(0%) brightness(1.02);
+}
+
+/* Badge sobre a imagem */
+.about-img-badge {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--title-bg) 0%, var(--brand-accent) 100%);
+  color: #0d090b;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(176,132,99,0.3);
+  z-index: 5;
+}
+
+.about-img-badge ion-icon {
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* Bolha de experiência */
+.about-exp-blob {
+  position: absolute;
+  top: 24px;
+  right: -16px;
+  width: 86px;
+  height: 86px;
+  background: linear-gradient(145deg, #1e1619 0%, #150f11 100%);
+  border: 1.5px solid rgba(176, 132, 99, 0.4);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 0 auto;
-  color: var(--neutral-900);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 10;
+  padding: 8px;
 }
 
-.about-section .about-content strong {
-  color: var(--brand-primary);
+.about-exp-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--brand-accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
 }
 
-/* Espaçamento melhorado para parágrafos do sobre mim */
-.about-content p {
-  margin-bottom: 1.7rem;
-  font-size: 1.13rem;
-  color: var(--neutral-800);
-  font-family: 'Montserrat', Arial, sans-serif;
-  line-height: 1.85;
-  text-align: center;
+.about-exp-label {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-top: 3px;
 }
 
-.about-content strong {
-  color: var(--brand-primary);
+/* =====================
+   COLUNA DO TEXTO
+===================== */
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-tag {
+  display: inline-block;
+  font-size: 0.68rem;
   font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--title-bg);
+  border-left: 3px solid var(--title-bg);
+  padding-left: 12px;
+  margin-bottom: 18px;
+  opacity: 0.75;
+}
+
+.about-title {
+  color: var(--neutral-900) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  letter-spacing: 0.4px !important;
+  text-shadow: none !important;
+  margin-bottom: 24px !important;
+  line-height: 1.25 !important;
+}
+
+.about-bio {
+  color: var(--neutral-800);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  letter-spacing: 0.15px;
+}
+
+.about-bio:last-of-type {
+  margin-bottom: 36px;
+}
+
+/* ---- Painel de stats ---- */
+.about-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(176, 132, 99, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(176,132,99,0.05) 0%, rgba(176,132,99,0.02) 100%);
+  margin-top: 8px;
+}
+
+.about-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 16px;
+  text-align: center;
+  border-right: 1px solid rgba(176, 132, 99, 0.15);
+  transition: background 0.3s;
+}
+
+.about-stat:last-child {
+  border-right: none;
+}
+
+.about-stat:hover {
+  background: rgba(176, 132, 99, 0.07);
+}
+
+.about-stat-num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--title-bg);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.about-stat-label {
+  font-size: 0.7rem;
+  color: rgba(20, 16, 18, 0.55);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 960px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+
+  .about-image-col {
+    justify-content: center;
+  }
+
+  .about-exp-blob {
+    right: calc(50% - 210px);
+  }
+
+  .about-photo {
+    max-width: 340px;
+    height: 400px;
+  }
+
+  .about-title {
+    text-align: center !important;
+  }
+
+  .about-tag {
+    display: block;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid var(--title-bg);
+    padding-bottom: 8px;
+  }
+
+  .about-bio {
+    text-align: center;
+  }
+
+  .about-section { padding: 70px 0 60px; }
+}
+
+@media (max-width: 600px) {
+  .about-section { padding: 56px 0 48px; }
+
+  .about-photo {
+    max-width: 280px;
+    height: 320px;
+  }
+
+  .about-exp-blob {
+    right: calc(50% - 170px);
+    width: 72px;
+    height: 72px;
+  }
+
+  .about-exp-num { font-size: 1.15rem; }
+  .about-exp-label { font-size: 0.52rem; }
+
+  .about-stats { flex-direction: column; }
+  .about-stat { border-right: none; border-bottom: 1px solid rgba(176,132,99,0.15); }
+  .about-stat:last-child { border-bottom: none; }
+
+  .about-title { font-size: 1.55rem !important; }
 }

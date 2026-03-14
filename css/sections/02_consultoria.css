@@ -1,122 +1,223 @@
 /* ===== PARA QUEM É ESSA CONSULTORIA ===== */
+
 .forwho-section {
-  background: var(--neutral-900);
-  padding: 50px 0;
-  border-radius: 30px;
-  box-shadow: 0 4px 32px var(--neutral-100);
-  border: 3px solid var(--title-bg);
-  transition: border-color 0.3s, box-shadow 0.3s;
-  
-}
-.forwho-section:hover {
-  border-color: var(--brand-accent);
-  box-shadow: 0 8px 32px var(--brand-accent);
+  background: linear-gradient(160deg, #141011 0%, #0e0b0d 55%, #1a1215 100%);
+  padding: 90px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ---- Orbs de fundo ---- */
+.forwho-section::before,
+.forwho-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.forwho-section::before {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(176, 132, 99, 0.1) 0%, transparent 65%);
+  top: -160px;
+  right: -120px;
+}
+
+.forwho-section::after {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(176, 132, 99, 0.07) 0%, transparent 65%);
+  bottom: -100px;
+  left: -80px;
+}
+
+.forwho-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Cabeçalho da seção ---- */
+.forwho-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.forwho-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  opacity: 0.7;
+  border: 1px solid rgba(208, 185, 167, 0.25);
+  border-radius: 50px;
+  padding: 5px 16px;
+  margin-bottom: 16px;
+}
+
+.forwho-title {
+  color: #fff !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: none !important;
+  margin-bottom: 14px !important;
+}
+
+.forwho-subtitle {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+/* ---- Grid de cards ---- */
 .forwho-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.8rem;
   justify-content: center;
-  margin-bottom: 2.2rem;
-}
-  
-.forwho-card {
-  background: var(--neutral-100);
-  border-radius: 18px;
-  box-shadow: 0 0 18px 0 var(--brand-accent);
-  padding: 1.7rem 1.5rem 1.2rem 1.3rem;
-  min-width: 250px;
-  max-width: 300px;
-  color: var(--neutral-900);
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  transition: box-shadow 0.3s, transform 0.3s;
-  position: relative;
-  text-align: center;
+  margin-bottom: 0;
 }
 
-.forwho-card-title {
-  color: var(--title-bg);
-  font-size: 1.13rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
-  text-transform: none;
+/* ---- Card base ---- */
+.forwho-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(208, 185, 167, 0.14);
+  border-left: 3px solid rgba(176, 132, 99, 0.4);
+  border-radius: 20px;
+  padding: 36px 28px 32px;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  transition: transform 0.36s cubic-bezier(0.4,0,0.2,1),
+              border-color 0.3s,
+              box-shadow 0.36s ease,
+              background 0.3s;
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+
+/* Brilho interno no hover */
+.forwho-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 0% 0%, rgba(208,185,167,0.07) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.forwho-card:hover::before {
+  opacity: 1;
 }
 
 .forwho-card:hover {
-  box-shadow: 0 0 32px var(--brand-accent);
-  transform: translateY(-6px) scale(1.04);
+  transform: translateY(-8px);
+  border-left-color: var(--title-bg);
+  border-color: rgba(208, 185, 167, 0.28);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(176,132,99,0.1);
+  background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
 }
 
-.forwho-card.active-highlight {
-  box-shadow: 0 0 32px var(--title-bg);
-  transform: translateY(-6px) scale(1.07);
-  z-index: 2;
-  border: 2px solid var(--title-bg);
-  background: var(--brand-accent);
-  transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
+/* Variante com acento mais forte (card central) */
+.forwho-card--accent {
+  border-left-color: var(--title-bg);
+  background: linear-gradient(145deg, rgba(176,132,99,0.09) 0%, rgba(176,132,99,0.03) 100%);
 }
 
-.forwho-bad-modern.active-highlight,
-.forwho-good-modern.active-highlight {
-  box-shadow: 0 0 32px var(--neutral-brown-800), 0 0 18px var(--brand-accent);
-  transform: translateY(-6px) scale(1.07);
-  z-index: 2;
-  border: 2px solid var(--neutral-100);
-  background: var(--neutral-900);
-  transition: box-shadow 0.4s, transform 0.4s, border 0.4s, background 0.4s;
+.forwho-card--accent:hover {
+  border-left-color: var(--brand-accent);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 28px rgba(176,132,99,0.12);
 }
 
-.forwho-icon {
-  display: none;
-}
-
-.forwho-diferenciais-modern {
-  display: flex;
-  gap: 2.5rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.forwho-bad-modern,
-.forwho-good-modern {
-  background: var(--neutral-900);
+/* ---- Ícone ---- */
+.forwho-card-icon {
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
-  box-shadow: 0 0 12px var(--neutral-100);
-  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
-  min-width: 220px;
-  max-width: 270px;
-  color: var(--neutral-100);
-  font-size: 1.01rem;
-  font-family: 'Montserrat', Arial, sans-serif;
+  background: rgba(176, 132, 99, 0.12);
+  border: 1px solid rgba(176, 132, 99, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
 }
 
-.forwho-bad-title,
-.forwho-good-title {
-  color: var(--neutral-100);
-  font-size: 1.08rem;
+.forwho-card-icon ion-icon {
+  font-size: 1.5rem;
+  color: var(--brand-accent);
+  pointer-events: none;
+}
+
+.forwho-card:hover .forwho-card-icon {
+  background: rgba(176, 132, 99, 0.2);
+  box-shadow: 0 0 18px rgba(176, 132, 99, 0.2);
+}
+
+/* ---- Número decorativo ---- */
+.forwho-card-num {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: rgba(208, 185, 167, 0.06);
+  line-height: 1;
+  letter-spacing: -1px;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.forwho-card:hover .forwho-card-num {
+  color: rgba(208, 185, 167, 0.1);
+}
+
+/* ---- Título do card ---- */
+.forwho-card-title {
+  color: #fff;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.7rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
 }
 
-.forwho-bad-modern ul,
-.forwho-good-modern ul {
-  padding-left: 1.1rem;
-  margin: 0;
+/* ---- Responsivo ---- */
+@media (max-width: 900px) {
+  .forwho-section { padding: 70px 0 60px; }
+  .forwho-header { margin-bottom: 40px; }
+  .forwho-cards { gap: 1.2rem; }
 }
 
-.forwho-bad-modern li,
-.forwho-good-modern li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+@media (max-width: 600px) {
+  .forwho-section { padding: 56px 0 48px; }
+  .forwho-card { min-width: 0; max-width: 100%; padding: 28px 22px 26px; }
+  .forwho-title { font-size: 1.55rem !important; }
+  .forwho-subtitle { font-size: 0.93rem; }
 }
+
+/* ===== LEGADO — ELEMENTOS NÃO USADOS ===== */
+.forwho-icon { display: none; }
+.forwho-diferenciais-modern,
+.forwho-bad-modern,
+.forwho-good-modern { display: none; }
 
 .section-title {
   color: var(--neutral-900);

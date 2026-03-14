@@ -1,85 +1,296 @@
-/* ===== PROCESS SECTION ===== */
+/* ===== COMO FUNCIONA ===== */
+
 .process-section {
-  padding: 100px 2rem;
-  background: var(--neutral-900);
-  padding: 50px 0;
-  border-radius: 30px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  border: 3px solid var(--title-bg);
-
-}
-
-.process-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--neutral-100);
-  margin: -2rem auto 0;
-  line-height: 1.6;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-.process-card {
-  background: var(--neutral-900);
-  border: 1px solid var(--neutral-100);
-  border-radius: 15px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: var(--transition);
+  background: linear-gradient(160deg, #141011 0%, #0e0b0d 55%, #1a1215 100%);
+  padding: 90px 0 100px;
   position: relative;
   overflow: hidden;
 }
 
-.process-card::before {
-  content: "";
+/* Orb decorativo */
+.process-section::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(176, 132, 99, 0.07) 0%, transparent 65%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.process-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Cabeçalho ---- */
+.process-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.process-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  opacity: 0.65;
+  border: 1px solid rgba(208, 185, 167, 0.22);
+  border-radius: 50px;
+  padding: 5px 16px;
+  margin-bottom: 16px;
+}
+
+.process-title {
+  color: #fff !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-shadow: none !important;
+  margin-bottom: 14px !important;
+}
+
+.process-intro {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* =====================
+   TIMELINE
+===================== */
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+  align-items: start;
+}
+
+/* Linha horizontal conectora */
+.process-line {
+  position: absolute;
+  top: 40px; /* alinha com centro dos nós */
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1px;
+  background: rgba(176, 132, 99, 0.15);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.process-line-fill {
   height: 100%;
-  background: linear-gradient(90deg, transparent, var(--brand-primary-strong), transparent);
-  transition: left 0.6s ease;
+  width: 0%;
+  background: linear-gradient(90deg, var(--title-bg), var(--brand-accent));
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s;
 }
 
-.process-card:hover::before {
-  left: 100%;
+/* Anima a linha quando a seção entra na viewport */
+.process-section.in-view .process-line-fill {
+  width: 100%;
 }
 
-.process-card:hover {
-  border-color: var(--neutral-100);
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px var(--neutral-100);
+/* ---- Cada etapa ---- */
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 16px;
 }
 
-.process-number {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, var(--neutral-100)ba, var(--neutral-100));
+/* ---- Nó circular ---- */
+.process-node {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  background: linear-gradient(145deg, #1e1619 0%, #150f11 100%);
+  border: 1.5px solid rgba(176, 132, 99, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--title-bg);
-  margin: 0 auto 25px;
+  position: relative;
+  margin-bottom: 28px;
+  flex-shrink: 0;
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+  z-index: 2;
+}
+
+.process-node ion-icon {
+  font-size: 1.7rem;
+  color: var(--brand-accent);
+  pointer-events: none;
+  transition: transform 0.35s ease, filter 0.35s;
+}
+
+/* Anel pulsante ao redor do nó */
+.process-node-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(176, 132, 99, 0.18);
+  pointer-events: none;
+  animation: nodeRingPulse 3s ease-in-out infinite;
+}
+
+@keyframes nodeRingPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%       { transform: scale(1.1); opacity: 0.15; }
+}
+
+.process-step:hover .process-node {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 28px rgba(176, 132, 99, 0.25), 0 8px 24px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+}
+
+.process-step:hover .process-node ion-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(208, 185, 167, 0.5));
+}
+
+/* Delay nos âneis para efeito cascata */
+.process-step:nth-child(3) .process-node-ring { animation-delay: 0.6s; }
+.process-step:nth-child(4) .process-node-ring { animation-delay: 1.2s; }
+
+/* ---- Card de conteúdo ---- */
+.process-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(208, 185, 167, 0.12);
+  border-radius: 20px;
+  padding: 28px 24px 26px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s, background 0.35s;
+  width: 100%;
+}
+
+/* Brilho interno no hover */
+.process-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(208,185,167,0.07) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.process-step:hover .process-card::before { opacity: 1; }
+
+.process-step:hover .process-card {
+  border-color: rgba(208, 185, 167, 0.28);
+  background: linear-gradient(145deg, rgba(255,255,255,0.065) 0%, rgba(255,255,255,0.02) 100%);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  transform: translateY(-4px);
+}
+
+/* Número decorativo */
+.process-card-num {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: rgba(208, 185, 167, 0.06);
+  line-height: 1;
+  letter-spacing: -1px;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.35s;
+}
+
+.process-step:hover .process-card-num {
+  color: rgba(208, 185, 167, 0.1);
 }
 
 .process-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--neutral-100);
+  font-size: 1.05rem;
   font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  position: relative;
 }
 
 .process-card p {
-  font-size: 1rem;
-  color: var(--neutral-100);
-  line-height: 1.8;
-  font-weight: 300;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.75;
+  font-weight: 400;
+  position: relative;
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 860px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 36px;
+  }
+
+  /* Linha vertical */
+  .process-line {
+    top: 40px;
+    left: 39px;
+    right: auto;
+    width: 1px;
+    height: calc(100% - 80px);
+    bottom: 40px;
+  }
+
+  .process-line-fill {
+    width: 100%;
+    height: 0%;
+    transition: height 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s;
+  }
+
+  .process-section.in-view .process-line-fill {
+    width: 100%;
+    height: 100%;
+  }
+
+  .process-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 36px 0;
+  }
+
+  .process-node {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .process-card {
+    text-align: left;
+    padding: 22px 20px 20px;
+  }
+
+  .process-card-num {
+    top: 8px;
+    right: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .process-section { padding: 60px 0 72px; }
+  .process-node { width: 64px; height: 64px; }
+  .process-node ion-icon { font-size: 1.35rem; }
+  .process-line { left: 31px; }
+  .process-timeline { padding-left: 28px; }
+  .process-header { margin-bottom: 52px; }
+  .process-title { font-size: 1.55rem !important; }
 }
