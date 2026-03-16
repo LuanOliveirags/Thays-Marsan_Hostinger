@@ -91,12 +91,37 @@ function initFeedbackGallery() {
     
     setTimeout(() => {
       deck.innerHTML = '';
-      const card = createCardMarkup(
+
+      const prevIndex = normalize(currentIndex - 1);
+      const nextIndex = normalize(currentIndex + 1);
+
+      // Card anterior (visível apenas no desktop via CSS)
+      const prevCard = createCardMarkup(
+        feedbackPrints[prevIndex],
+        `Print de feedback ${prevIndex + 1}`
+      );
+      prevCard.classList.remove('active');
+      prevCard.classList.add('feedback-card--prev');
+
+      // Card ativo (centro)
+      const activeCard = createCardMarkup(
         feedbackPrints[currentIndex],
         `Print de feedback ${currentIndex + 1}`
       );
-      deck.appendChild(card);
-      
+      activeCard.classList.add('feedback-card--active');
+
+      // Card próximo (visível apenas no desktop via CSS)
+      const nextCard = createCardMarkup(
+        feedbackPrints[nextIndex],
+        `Print de feedback ${nextIndex + 1}`
+      );
+      nextCard.classList.remove('active');
+      nextCard.classList.add('feedback-card--next');
+
+      deck.appendChild(prevCard);
+      deck.appendChild(activeCard);
+      deck.appendChild(nextCard);
+
       // Atualizar barra de progresso e contador
       updateProgress();
       updateCounter();
@@ -137,6 +162,20 @@ function initFeedbackGallery() {
   nextBtn.addEventListener('click', showNext);
 
   deck.addEventListener('click', (event) => {
+    const card = event.target.closest('.feedback-card');
+    if (!card) return;
+
+    // Clique no card anterior → navegar
+    if (card.classList.contains('feedback-card--prev')) {
+      goToIndex(currentIndex - 1);
+      return;
+    }
+    // Clique no card próximo → navegar
+    if (card.classList.contains('feedback-card--next')) {
+      goToIndex(currentIndex + 1);
+      return;
+    }
+    // Clique no card ativo → abrir modal
     const img = event.target.closest('.feedback-card__image img');
     if (!img) return;
     openFeedbackModal(img.getAttribute('src'));

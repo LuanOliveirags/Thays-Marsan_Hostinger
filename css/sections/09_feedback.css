@@ -635,3 +635,50 @@
     text-align: center;
   }
 }
+
+/* =====================================================
+   DESKTOP: 3 CARDS LADO A LADO
+===================================================== */
+
+@media (min-width: 901px) {
+  .feedback-deck {
+    max-width: none;
+    gap: 20px;
+    min-height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Card ativo (centro) */
+  .feedback-card--active {
+    flex: 0 0 360px;
+    min-height: 400px;
+  }
+
+  /* Cards laterais */
+  .feedback-card--prev,
+  .feedback-card--next {
+    flex: 0 0 210px;
+    min-height: 330px;
+    opacity: 0.45;
+    transform: scale(0.88);
+    filter: brightness(0.78);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .feedback-card--prev:hover,
+  .feedback-card--next:hover {
+    opacity: 0.72;
+    transform: scale(0.92);
+    filter: brightness(0.9);
+  }
+}
+
+/* Mobile: ocultar cards laterais */
+@media (max-width: 900px) {
+  .feedback-card--prev,
+  .feedback-card--next {
+    display: none;
+  }
+}
